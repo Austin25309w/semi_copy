@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>show</title>
+	<style>
+	*{
+			margin: 10px;
+			padding: 10px;
+			font-family: fantasy;
+		}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #21AAE1;
+}
+div {
+
+}
+</style>
+</head>
+<body>
+	<!-- <form action ="/show/{{ id }}"></form> -->
+	<h1>User {{ id }}</h1>
+	<h4 name="full_name">Full Name: {{ name }}</h4>
+	<h4 name = "email">Email: {{ email }}</h4>
+	<h4>Created at: {{ date }}</h4>
+	<a href="/edit/{{ id }}">Edit</a> | <a href="/delete/{{ id }}">Delete</a>
+
+
+</body>
+</html>

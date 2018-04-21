@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>semi-Restful</title>
+	<style>
+	*{
+			margin: 10px;
+			padding: 10px;
+			font-family: fantasy;
+		}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #21AAE1;
+}
+div {
+
+}
+</style>
+</head>
+<body>
+	<h1>Users</h1>
+	<div>
+		<table>
+			<tr>
+				<th>id</th>
+				<th>Full Name</th>
+				<th>Email</th>
+				<th>Created At</th>
+				<th>Actions</th>
+			</tr>
+			{% for x in users%}
+			<tr>
+				<td>{{ x.id }}</td>
+				<td>{{ x.first_name }} {{ x.last_name}}</td>
+				<td>{{ x.email }}</td>
+				<td>{{ x.created_at }}</td>
+				<td><a href="/show/{{ x.id }}">Show</a>
+					<a href="/edit/{{ x.id }}">Edit</a>
+					<a href="/delete/{{ x.id }}">Delete</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+		<a href="/process">Add a new user</a>
+	</div>
+
+</body>
+</html>

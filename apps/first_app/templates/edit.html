@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>edit user</title>
+	<style type="text/css">
+		*{
+			margin: 10px;
+			padding: 10px;
+			font-family: fantasy;
+		}
+	</style>
+</head>
+<body>
+	<h1>Edit User {{ edituser.id }}</h1>
+	<form action="/update/{{ edituser.id }}" method="post">
+	{% csrf_token %}
+	<h4>first name:</h4>
+	<input type="text" name="first_name">
+	<h4>Last name:</h4>
+	<input type="text" name="last_name">
+	<h4>Email</h4>
+	<input type="text" name="email">
+	<button style="background-color: #317BE1;">Update</button>
+	</form>
+	<a href="/edit/{{edituser.id}}">Show</a> | <a href="/">Go Back</a>
+</body>
+</html>
